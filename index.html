@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="id" data-mode="github">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Simple Pahrul | IT × Runner</title>
+
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FONT -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body data-mode="github">
+    <!-- MODE TOGGLE -->
+    <button class="btn btn-sm rounded-pill mode-btn" onclick="toggleMode()">
+      <span id="modeIcon">☀️</span>
+      <span id="modeText">Strava Mode</span>
+    </button>
+
+    <main class="main-layout">
+      <!-- =========================
+           HEADER
+      ========================== -->
+      <header class="mb-3">
+        <div class="card text-center p-4">
+          <h1 class="fw-bold mb-3">Simple Pahrul</h1>
+
+          <div class="d-flex justify-content-center gap-2 flex-wrap">
+            <!-- GITHUB -->
+            <a
+              href="#githubSection"
+              id="githubBtn"
+              class="btn rounded-pill px-3 nav-btn d-flex align-items-center gap-2"
+            >
+              <img
+                src="https://www.svgrepo.com/show/512317/github-142.svg"
+                width="18"
+                height="18"
+                alt="GitHub"
+              />
+              GitHub
+            </a>
+
+            <!-- STRAVA -->
+            <a
+              href="#stravaSection"
+              id="stravaBtn"
+              class="btn rounded-pill px-3 nav-btn d-flex align-items-center gap-2"
+            >
+              <img
+                src="https://www.svgrepo.com/show/349518/strava.svg"
+                width="18"
+                height="18"
+                alt="Strava"
+              />
+              Strava
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <hr class="section-line" />
+
+      <!-- =========================
+           ABOUT + CONTACT
+      ========================== -->
+      <section>
+        <h5 class="mb-3">👨‍💻 IT × 🏃 Runner</h5>
+
+        <div class="row g-3">
+          <!-- ABOUT -->
+          <div class="col-md-6">
+            <div class="card p-4 h-100">
+              <h5 class="mb-3">👨 About Me</h5>
+
+              <p class="muted mb-0">
+                Ngoding buat ngerti gimana sistem bekerja,<br />
+                lari buat ngerti gimana diri sendiri tetap jalan.
+                <br /><br />
+                Lagi belajar jadi programmer yang rapi di setiap code, dan
+                runner yang kuat di setiap langkah.
+              </p>
+            </div>
+          </div>
+
+          <!-- CONTACT -->
+          <div class="col-md-6">
+            <div class="card p-4 h-100">
+              <h5 class="mb-3">📞 Contact</h5>
+
+              <p class="muted mb-3">
+                Ada project menarik? Mau collab? Atau sekadar ngobrol soal tech
+                & lari?
+                <strong>DM aja, response time biasanya under 24 jam.</strong>
+              </p>
+
+              <div class="d-flex gap-2 flex-wrap">
+                <!-- TIKTOK -->
+                <a
+                  href="https://tiktok.com/@pahrulpyxzy"
+                  target="_blank"
+                  class="btn rounded-pill px-3 nav-btn social-btn d-flex align-items-center gap-2"
+                >
+                  <img
+                    src="https://www.svgrepo.com/show/473806/tiktok.svg"
+                    width="18"
+                    height="18"
+                    alt="TikTok"
+                  />
+                  TikTok
+                </a>
+
+                <!-- INSTAGRAM -->
+                <a
+                  href="https://instagram.com/pahrulpyxzy"
+                  target="_blank"
+                  class="btn rounded-pill px-3 nav-btn social-btn d-flex align-items-center gap-2"
+                >
+                  <img
+                    src="https://www.svgrepo.com/show/452229/instagram-1.svg"
+                    width="18"
+                    height="18"
+                    alt="Instagram"
+                  />
+                  Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-line" />
+
+      <!-- =========================
+           GITHUB SECTION
+      ========================== -->
+      <section id="githubSection">
+        <h5 class="mb-3">👨‍💻 GitHub</h5>
+
+        <!-- PROFILE + STATS (ALL IN ONE CARD) -->
+        <div class="card p-4 mb-3" id="githubProfile">loading profile...</div>
+
+        <!-- PROJECTS -->
+        <h6 class="mb-3">📦 Repositories</h6>
+        <div id="githubRepos"></div>
+
+        <!-- SKILLS -->
+        <h6 class="mb-3 mt-4">🧠 Skills</h6>
+        <div class="card p-4" id="githubSkills">loading skills...</div>
+      </section>
+
+      <hr class="section-line" />
+
+      <!-- =========================
+           STRAVA SECTION
+      ========================== -->
+      <section id="stravaSection">
+        <h5 class="mb-3">🏃 Strava</h5>
+
+        <div class="row g-3">
+          <!-- LEFT -->
+          <div class="col-lg-8">
+            <div class="card p-3 mb-3">
+              <iframe
+                class="w-100 rounded"
+                style="height: 165px; border: 0"
+                src="https://www.strava.com/athletes/194644124/activity-summary/01c9c4983e67d4354a1e048b30274ace5c68c04f"
+              ></iframe>
+            </div>
+
+            <div class="card p-3">
+              <iframe
+                class="w-100 rounded"
+                style="height: 460px; border: 0"
+                src="https://www.strava.com/athletes/194644124/latest-rides/01c9c4983e67d4354a1e048b30274ace5c68c04f"
+              ></iframe>
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="col-lg-4">
+            <div class="card p-3 h-100">
+              <img
+                src="https://i.pinimg.com/736x/f4/a0/99/f4a099ac72497561f66dba82398dcea6.jpg"
+                class="img-fluid rounded"
+                style="height: 675px; object-fit: cover"
+                alt="running"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-line" />
+
+      <!-- =========================
+           FOOTER
+      ========================== -->
+      <footer>
+        <div class="card text-center p-4">
+          <small class="muted d-block">
+            © 2026 Simple Pahrul<br />
+            code · run · hydrate
+          </small>
+        </div>
+      </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
