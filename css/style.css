@@ -167,9 +167,9 @@ body[data-mode="strava"] #stravaBtn {
 ========================= */
 
 .social-btn {
-  min-width: 140px;
   border: 1px solid transparent;
   transition: 0.2s ease;
+  flex: 1;
 }
 
 /* =========================
