@@ -18,6 +18,8 @@
       rel="stylesheet"
     />
 
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <!-- STYLE -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -30,9 +32,7 @@
     </button>
 
     <main class="main-layout">
-      <!-- =========================
-           HEADER
-      ========================== -->
+      <!-- ========================= HEADER ========================== -->
       <header class="mb-3">
         <div class="card text-center p-4">
           <h1 class="fw-bold mb-3">Simple Pahrul</h1>
@@ -73,17 +73,22 @@
 
       <hr class="section-line" />
 
-      <!-- =========================
-           ABOUT + CONTACT
-      ========================== -->
+      <!-- ========================= ABOUT + CONTACT ========================== -->
       <section>
-        <h5 class="mb-3">👨‍💻 IT × 🏃 Runner</h5>
+        <h5 class="mb-3 d-flex align-items-center gap-2">
+          <i data-lucide="computer" class="icon"></i>
+          <span>IT × Runner</span>
+          <i data-lucide="sport-shoe" class="icon"></i>
+        </h5>
 
         <div class="row g-3">
           <!-- ABOUT -->
           <div class="col-md-6">
             <div class="card p-4 h-100">
-              <h5 class="mb-3">👨 About Me</h5>
+              <h5 class="mb-3">
+                <i data-lucide="user" class="icon"></i>
+                About Me
+              </h5>
 
               <p class="muted mb-0">
                 Ngoding buat ngerti gimana sistem bekerja,<br />
@@ -98,12 +103,18 @@
           <!-- CONTACT -->
           <div class="col-md-6">
             <div class="card p-4 h-100">
-              <h5 class="mb-3">📞 Contact</h5>
+              <h5 class="mb-3">
+                <i data-lucide="phone" class="icon"></i>
+                Contact
+              </h5>
 
               <p class="muted mb-3">
                 Ada project menarik? Mau collab? Atau sekadar ngobrol soal tech
                 & lari?
-                <strong>DM aja, response time biasanya under 24 jam.</strong>
+                <strong
+                  >DM aja, response time biasanya pas buka laptop atau habis
+                  lari.</strong
+                >
               </p>
 
               <div class="d-flex gap-2">
@@ -119,7 +130,6 @@
                     height="18"
                     alt="TikTok"
                   />
-
                   TikTok
                 </a>
 
@@ -135,7 +145,6 @@
                     height="18"
                     alt="Instagram"
                   />
-
                   Instagram
                 </a>
 
@@ -145,7 +154,7 @@
                   target="_blank"
                   class="btn rounded-pill px-3 nav-btn social-btn flex-fill d-flex align-items-center justify-content-center gap-2"
                 >
-                  😹 Other
+                  😹
                 </a>
               </div>
             </div>
@@ -155,31 +164,39 @@
 
       <hr class="section-line" />
 
-      <!-- =========================
-           GITHUB SECTION
-      ========================== -->
+      <!-- ========================= GITHUB ========================== -->
       <section id="githubSection">
-        <h5 class="mb-3">👨‍💻 GitHub</h5>
+        <h5 class="mb-3">
+          <i data-lucide="computer" class="icon"></i>
+          GitHub
+        </h5>
 
-        <!-- PROFILE + STATS (ALL IN ONE CARD) -->
+        <!-- PROFILE -->
         <div class="card p-4 mb-3" id="githubProfile">loading profile...</div>
 
-        <!-- PROJECTS -->
-        <h6 class="mb-3">📦 Repositories</h6>
+        <!-- REPOS -->
+        <h6 class="mb-3">
+          <i data-lucide="folder-git-2" class="icon"></i>
+          Repositories
+        </h6>
         <div id="githubRepos"></div>
 
         <!-- SKILLS -->
-        <h6 class="mb-3 mt-4">🧠 Skills</h6>
+        <h6 class="mb-3 mt-4">
+          <i data-lucide="code" class="icon"></i>
+          Skills
+        </h6>
         <div class="card p-4" id="githubSkills">loading skills...</div>
       </section>
 
       <hr class="section-line" />
 
-      <!-- =========================
-           STRAVA SECTION
-      ========================== -->
+      <!-- ========================= STRAVA ========================== -->
       <section id="stravaSection">
-        <h5 class="mb-3">🏃 Strava</h5>
+        <h5 class="mb-3">
+          <i data-lucide="sport-shoe" class="icon"></i>
+          Strava
+        </h5>
 
         <div class="row g-3">
           <!-- LEFT -->
@@ -217,9 +234,7 @@
 
       <hr class="section-line" />
 
-      <!-- =========================
-           FOOTER
-      ========================== -->
+      <!-- ========================= FOOTER ========================== -->
       <footer>
         <div class="card text-center p-4">
           <small class="muted d-block">

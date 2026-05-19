@@ -47,7 +47,7 @@ async function fetchGitHub(url) {
 }
 
 /* =========================
-   PROFILE
+   GITHUB PROFILE
 ========================= */
 
 async function loadGithubProfile() {
@@ -59,85 +59,124 @@ async function loadGithubProfile() {
     document.getElementById("githubProfile").innerHTML = `
       <div class="d-flex align-items-start gap-3 flex-wrap">
 
-        <!-- AVATAR -->
-        <img
-          src="${data.avatar_url}"
-          width="85"
-          class="rounded-circle"
-        />
+  <!-- AVATAR -->
+  <img
+    src="${data.avatar_url}"
+    width="85"
+    class="rounded-circle"
+  />
 
-        <!-- INFO -->
-        <div class="flex-grow-1">
+  <!-- INFO -->
+  <div class="flex-grow-1">
 
-          <!-- NAME + USERNAME -->
-          <h5 class="mb-0">
-            ${data.name || "-"}
-          </h5>
+    <!-- NAME -->
+    <h5 class="mb-0">
+      ${data.name || "-"}
+    </h5>
 
-          <div class="small muted mb-2">
-            @${data.login}
-          </div>
+    <!-- USERNAME -->
+    <div class="small muted mb-2">
+      @${data.login}
+    </div>
 
-          <!-- BIO -->
-          <div class="small mb-2">
-            ${data.bio || "No bio available"}
-          </div>
+    <!-- BIO -->
+    <div class="small mb-2">
+      ${data.bio || "No bio available"}
+    </div>
 
-          <!-- META -->
-          <div class="small muted mb-2">
-            🏢 ${data.company || "-"} • 📍 ${data.location || "-"}
-          </div>
+    <!-- META -->
+    <div class="small muted mb-2 d-flex flex-wrap gap-3">
 
-          <!-- STATS -->
-          <div class="d-flex flex-wrap gap-3 small mb-2">
+      <span class="d-flex align-items-center gap-1">
+        <i data-lucide="building-2" class="icon"></i>
+        ${data.company || "-"}
+      </span>
 
-            <a href="${githubUrl}?tab=repositories" target="_blank">
-              📦 ${data.public_repos} Repos
-            </a>
+      <span class="d-flex align-items-center gap-1">
+        <i data-lucide="map-pin" class="icon"></i>
+        ${data.location || "-"}
+      </span>
 
-            <a href="https://github.com/${data.login}?tab=followers" target="_blank">
-              👥 ${data.followers} Followers
-            </a>
+    </div>
 
-            <a href="https://github.com/${data.login}?tab=following" target="_blank">
-              👥 ${data.following} Following
-            </a>
+    <!-- STATS -->
+    <div class="d-flex flex-wrap gap-3 small mb-2">
 
-          </div>
+      <a
+        href="${githubUrl}?tab=repositories"
+        target="_blank"
+        class="d-flex align-items-center gap-1"
+      >
+        <i data-lucide="folder-git-2" class="icon"></i>
+        ${data.public_repos} Repos
+      </a>
 
-          <!-- LINKS -->
-          <div class="small mb-2 d-flex flex-wrap gap-2">
+      <a
+        href="https://github.com/${data.login}?tab=followers"
+        target="_blank"
+        class="d-flex align-items-center gap-1"
+      >
+        <i data-lucide="users" class="icon"></i>
+        ${data.followers} Followers
+      </a>
 
-            <a href="${githubUrl}" target="_blank" class="text-decoration-none">
-              🔗 github
-            </a>
+      <a
+        href="https://github.com/${data.login}?tab=following"
+        target="_blank"
+        class="d-flex align-items-center gap-1"
+      >
+        <i data-lucide="user-plus" class="icon"></i>
+        ${data.following} Following
+      </a>
 
-            ${
-              data.blog
-                ? `<a href="${
-                    data.blog.startsWith("http")
-                      ? data.blog
-                      : "https://" + data.blog
-                  }" target="_blank" class="text-decoration-none">
-                    🌐 website
-                  </a>`
-                : `<span class="muted">🌐 no website</span>`
-            }
+    </div>
 
-          </div>
+    <!-- LINKS -->
+    <div class="small mb-2 d-flex flex-wrap gap-3">
 
-        </div>
+      <a
+        href="${githubUrl}"
+        target="_blank"
+        class="d-flex align-items-center gap-1"
+      >
+        <i data-lucide="computer" class="icon"></i>
+        GitHub
+      </a>
 
-      </div>
+      ${
+        data.blog
+          ? `<a
+              href="${
+                data.blog.startsWith("http")
+                  ? data.blog
+                  : "https://" + data.blog
+              }"
+              target="_blank"
+              class="d-flex align-items-center gap-1"
+            >
+              <i data-lucide="globe" class="icon"></i>
+              Website
+            </a>`
+          : `<span class="muted d-flex align-items-center gap-1">
+              <i data-lucide="globe" class="icon"></i>
+              No website
+            </span>`
+      }
+
+    </div>
+
+  </div>
+</div>
     `;
   } catch (err) {
     document.getElementById("githubProfile").innerHTML =
-      `<div class="muted">failed to load GitHub profile 😵</div>`;
+      `<div class="muted">failed to load GitHub profile</div>`;
   }
+  lucide.createIcons();
 }
 
 /* =========================
-   REPOSITORIES
+   GITHUB REPOSITORIES
 ========================= */
 
 async function loadGithubRepos() {
@@ -155,8 +194,6 @@ async function loadGithubRepos() {
             <div class="d-flex justify-content-between align-items-start mb-2">
 
               <div>
-
-                <!-- REPO NAME (CLICKABLE) -->
                 <a href="${repo.html_url}" target="_blank" class="fw-bold">
                   ${repo.name}
                 </a>
@@ -164,7 +201,6 @@ async function loadGithubRepos() {
                 <div class="muted small">
                   ${repo.description || "no description"}
                 </div>
-
               </div>
 
               <small class="muted">
@@ -183,12 +219,12 @@ async function loadGithubRepos() {
       .join("");
   } catch (err) {
     document.getElementById("githubRepos").innerHTML =
-      `<div class="card p-3 muted">gagal load repos 😵</div>`;
+      `<div class="card p-3 muted">failed to load repos</div>`;
   }
 }
 
 /* =========================
-   SKILLS
+   GITHUB SKILLS
 ========================= */
 
 async function loadGithubSkills() {
@@ -216,7 +252,7 @@ async function loadGithubSkills() {
       .join("");
   } catch (err) {
     document.getElementById("githubSkills").innerHTML =
-      `<div class="muted">gagal load skills 😵</div>`;
+      `<div class="muted">failed to load skills</div>`;
   }
 }
 
@@ -227,3 +263,4 @@ async function loadGithubSkills() {
 loadGithubProfile();
 loadGithubRepos();
 loadGithubSkills();
+lucide.createIcons();
